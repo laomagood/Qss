@@ -13,13 +13,6 @@ int main(int argc, char *argv[])
 
     Form w;
     w.show();
-    QssHelper::instance()->setSkinStyle("blue");
 
-//    QString strQssFile("./qss/Ma.qss");
-//    Util::setSkinStyle(strQssFile);
-
-//    QssHelper::instance()->getAllQssName();
-
-//    qDebug() << QColor("#00BB9E").green();
     return a.exec();
 }

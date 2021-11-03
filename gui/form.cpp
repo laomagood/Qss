@@ -22,6 +22,8 @@ Form::Form(QWidget *parent) :
         qDebug() << t_name;
         QssHelper::instance()->setSkinStyle(t_name);
     });
+
+    QssHelper::instance()->setSkinStyle(ui->comboBoxSkin->currentText());
 }
 
 Form::~Form()
