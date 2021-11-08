@@ -1,7 +1,5 @@
 HEADERS += \
-    $$PWD/QssHelper.h \
-    $$PWD/Util.h
+    $$PWD/QssHelper.h
 
 SOURCES += \
-    $$PWD/QssHelper.cpp \
-    $$PWD/Util.cpp
+    $$PWD/QssHelper.cpp

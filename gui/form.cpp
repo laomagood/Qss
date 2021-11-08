@@ -14,6 +14,7 @@ Form::Form(QWidget *parent) :
 
     ui->widget->setProperty("CustomColor", 1);
     ui->label->setProperty("CustomColor", 1);
+    ui->pushButton->setProperty("CustomColor", 2);
 
     QStringList strListSkin = QssHelper::instance()->getAllQssName();
     ui->comboBoxSkin->addItems(strListSkin);

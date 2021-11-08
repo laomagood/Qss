@@ -200,14 +200,14 @@ top:1px;
 
 QMenuBar::item{
 color:TEXTCOLOR;
-background-color:NORMALCOLOR;
+background-color:transparent;
 margin:0px;
 padding:3px 10px;
 }
 
 QMenu,QMenuBar,QMenu:disabled,QMenuBar:disabled{
 color:TEXTCOLOR;
-background-color:NORMALCOLOR;
+background-color:transparent;
 border:1px solid BORDERCOLOR;
 margin:0px;
 }
@@ -580,6 +580,18 @@ border-radius:0px;
 
 QLineEdit,QTextEdit,QPlainTextEdit,QSpinBox,QDoubleSpinBox,QComboBox,QDateEdit,QTimeEdit,QDateTimeEdit{
 background:PANELCOLOR;
+}
+
+QToolBar > .QToolButton {
+background-color:transparent;
+}
+
+QToolBar > .QToolButton:hover {
+background-color:DARKCOLOR;
+}
+
+QMessageBox {
+background-color:PANELCOLOR;
 }
 
 *:disabled{
