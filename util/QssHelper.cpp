@@ -22,8 +22,8 @@ QStringList QssHelper::getAllQssName() const
     QDirIterator iterator(strPath, filters, QDir::Files | QDir::NoSymLinks);
     while(iterator.hasNext()) {
         QFileInfo info(iterator.next());
-        // filePath.append(info.filePath());// 文件目录+文件名
-        filePath.append(info.baseName());   // 文件名(不带后缀)
+        // filePath.append(info.filePath()); //文件目录+文件名
+        filePath.append(info.baseName());
     }
 
     return filePath;
@@ -33,6 +33,7 @@ void QssHelper::setSkinStyle(const QString &t_name)
 {
     getIniFileColor(t_name);
     replaceColorQssFile();
+    emit skinChanged();
 }
 
 void QssHelper::getIniFileColor(QString t_nama)

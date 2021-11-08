@@ -14,6 +14,9 @@ public:
     QStringList getAllQssName() const;                  // 获取所有Qss名称
     void setSkinStyle(const QString &t_name);           // 设置皮肤
 
+signals:
+    void skinChanged();                                 // 皮肤更新信号
+
 private:
     QssHelper() = default;
     ~QssHelper() = default;
