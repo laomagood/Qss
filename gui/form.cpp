@@ -12,11 +12,14 @@ Form::Form(QWidget *parent) :
 
     this->setProperty("form", true);
 
+    // 使用自定义颜色
     ui->widget->setProperty("CustomColor", 1);
     ui->label->setProperty("CustomColor", 1);
     ui->pushButton->setProperty("CustomColor", 2);
 
-    QStringList strListSkin = QssHelper::instance()->getAllQssName();
+    // 获取所有样式
+    QMap<QString, QString> mapSkin = QssHelper::instance()->getAllQssName();
+    QStringList strListSkin = mapSkin.keys();
     ui->comboBoxSkin->addItems(strListSkin);
 
     connect(ui->comboBoxSkin, &QComboBox::currentTextChanged, [](QString t_name) {
