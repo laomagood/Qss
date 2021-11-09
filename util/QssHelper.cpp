@@ -11,10 +11,12 @@ QssHelper *QssHelper::instance()
     return &instance;
 }
 
-QStringList QssHelper::getAllQssName() const
+QMap<QString, QString> QssHelper::getAllQssName() const
 {
-    QStringList filePath;
+    QMap<QString, QString> map;
 
+    // [1] 获取主题名称
+    QStringList strList;
     QString strPath = "./qss/ini";
     QStringList filters;
     filters << "*.ini";
@@ -23,17 +25,26 @@ QStringList QssHelper::getAllQssName() const
     while(iterator.hasNext()) {
         QFileInfo info(iterator.next());
         // filePath.append(info.filePath()); //文件目录+文件名
-        filePath.append(info.baseName());
+        strList.append(info.baseName());
     }
 
-    return filePath;
+    // [2] 获取颜色
+    for(auto str : strList) {
+        QString strPath = "./qss/ini/" + str + ".ini";
+        QSettings settings(strPath, QSettings::IniFormat);
+        QString strColor = settings.value(QString("PanelColor")).toString();
+
+        map.insert(str, strColor);
+    }
+
+    return map;
 }
 
 void QssHelper::setSkinStyle(const QString &t_name)
 {
     getIniFileColor(t_name);
     replaceColorQssFile();
-    emit skinChanged();
+    emit skinChanged(t_name);
 }
 
 void QssHelper::getIniFileColor(QString t_nama)

@@ -11,19 +11,19 @@ class QssHelper : public QObject
 public:
     static QssHelper *instance() ;
 
-    QStringList getAllQssName() const;                  // 获取所有Qss名称
+    QMap<QString, QString> getAllQssName() const;       // 获取所有Qss<主题名称， 颜色>
     void setSkinStyle(const QString &t_name);           // 设置皮肤
 
 signals:
-    void skinChanged();                                 // 皮肤更新信号
+    void skinChanged(QString);                          // 皮肤更新信号（主题名称）
 
 private:
     QssHelper() = default;
     ~QssHelper() = default;
 private:
-    void getIniFileColor(QString t_file);
-    void replaceColorQssFile();
-    void replaceColorImages();
+    void getIniFileColor(QString t_file);               // 获取配置文件颜色
+    void replaceColorQssFile();                         // 替换Qss文件颜色
+    void replaceColorImages();                          // 替换Icon图片颜色
 
 private:
     QString m_strPanelColor  ;                          // 面板颜色
