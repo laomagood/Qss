@@ -59,6 +59,8 @@ void QssHelper::getIniFileColor(QString t_nama)
     m_strNormalColor  = settings.value(QString("NormalColor")).toString();
     m_strDarkColor    = settings.value(QString("DarkColor")).toString();
     m_strHighColor    = settings.value(QString("HighColor")).toString();
+    m_strDisabledColor= settings.value(QString("DisabledColor")).toString();
+    m_strCheckedColor = settings.value(QString("CheckedColor")).toString();
 
     m_strCustomColor1 = settings.value(QString("CustomColor1")).toString();
     m_strCustomColor2 = settings.value(QString("CustomColor2")).toString();
@@ -75,16 +77,19 @@ void QssHelper::replaceColorQssFile()
         qss = QLatin1String(file.readAll());
     }
 
-    qss.replace("PANELCOLOR",  m_strPanelColor );
-    qss.replace("TEXTCOLOR",   m_strTextColor  );
-    qss.replace("BORDERCOLOR", m_strBorderColor);
-    qss.replace("NORMALCOLOR", m_strNormalColor);
-    qss.replace("DARKCOLOR",   m_strDarkColor  );
-    qss.replace("HIGHCOLOR",   m_strHighColor  );
-    qss.replace("CUSTOMCOLOR1",m_strCustomColor1);
-    qss.replace("CUSTOMCOLOR2",m_strCustomColor2);
-    qss.replace("CUSTOMCOLOR3",m_strCustomColor3);
-    qss.replace("CUSTOMCOLOR4",m_strCustomColor4);
+    qss.replace("PANELCOLOR",  m_strPanelColor      ,Qt::CaseSensitive);
+    qss.replace("TEXTCOLOR",   m_strTextColor       ,Qt::CaseSensitive);
+    qss.replace("BORDERCOLOR", m_strBorderColor     ,Qt::CaseSensitive);
+    qss.replace("NORMALCOLOR", m_strNormalColor     ,Qt::CaseSensitive);
+    qss.replace("DARKCOLOR",   m_strDarkColor       ,Qt::CaseSensitive);
+    qss.replace("HIGHCOLOR",   m_strHighColor       ,Qt::CaseSensitive);
+    qss.replace("DISABLEDCOLOR",m_strDisabledColor  ,Qt::CaseSensitive);
+    qss.replace("CHECKEDCOLOR", m_strCheckedColor   ,Qt::CaseSensitive);
+
+    qss.replace("CUSTOMCOLOR1",m_strCustomColor1    ,Qt::CaseSensitive);
+    qss.replace("CUSTOMCOLOR2",m_strCustomColor2    ,Qt::CaseSensitive);
+    qss.replace("CUSTOMCOLOR3",m_strCustomColor3    ,Qt::CaseSensitive);
+    qss.replace("CUSTOMCOLOR4",m_strCustomColor4    ,Qt::CaseSensitive);
 
     QString PaletteColor = qss.mid(13, 7);
     qApp->setPalette(QPalette(QColor(PaletteColor)));

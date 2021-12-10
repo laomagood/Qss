@@ -4,6 +4,8 @@
 /*NormalColor:NORMALCOLOR*/
 /*DarkColor:DARKCOLOR*/
 /*HighColor:HIGHCOLOR*/
+/*DisabledColor:DISABLEDCOLOR*/
+/*CheckedColor:CHECKEDCOLOR*/
 /*CustomColor1:CUSTOMCOLOR1*/
 /*CustomColor2:CUSTOMCOLOR2*/
 /*CustomColor3:CUSTOMCOLOR3*/
@@ -41,6 +43,34 @@ color:CUSTOMCOLOR3;
 QLabel[CustomColor="4"]{
 background: transparent;
 color:CUSTOMCOLOR4;
+}
+
+QPushButton:disabled{
+background:DISABLEDCOLOR;
+}
+
+QPushButton:checked {
+background:CHECKEDCOLOR;
+}
+QPushButton:checked:hover {
+background:CHECKEDCOLOR;
+}
+
+QRadioButton:disabled,QCheckBox:disabled{
+color:DISABLEDCOLOR;
+}
+
+QGroupBox:disabled,QLineEdit:disabled,QTextEdit:disabled,QPlainTextEdit:disabled,QSpinBox:disabled,QDoubleSpinBox:disabled,QComboBox:disabled,QDateEdit:disabled,QTimeEdit:disabled,QDateTimeEdit:disabled{
+color:DISABLEDCOLOR;
+border:1px solid DISABLEDCOLOR;
+}
+
+QSlider::handle:horizontal:disabled{
+background:DISABLEDCOLOR;
+}
+
+QSlider::handle:vertical:disabled{
+background:DISABLEDCOLOR;
 }
 
 .QLabel{
@@ -111,6 +141,8 @@ image:url(./qss/images/radiobutton_unchecked.png);
 
 QRadioButton::indicator::unchecked:disabled{
 image:url(./qss/images/radiobutton_unchecked_disable.png);
+background:none;
+selection-color:DISABLEDCOLOR;
 }
 
 QRadioButton::indicator::checked{

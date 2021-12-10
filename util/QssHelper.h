@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 
 #include <QObject>
 #include <QSettings>
@@ -32,6 +32,9 @@ private:
     QString m_strNormalColor ;                          // 普通颜色
     QString m_strDarkColor   ;                          // 加深颜色
     QString m_strHighColor   ;                          // 高亮颜色
+    QString m_strDisabledColor;                         // 使能失效颜色
+    QString m_strCheckedColor;                          // 选中颜色
+
     QString m_strCustomColor1;                          // 自定义颜色
     QString m_strCustomColor2;                          // 自定义颜色
     QString m_strCustomColor3;                          // 自定义颜色

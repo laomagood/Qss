@@ -15,7 +15,7 @@ Form::Form(QWidget *parent) :
     // 使用自定义颜色
     ui->widget->setProperty("CustomColor", 1);
     ui->label->setProperty("CustomColor", 1);
-    ui->pushButton->setProperty("CustomColor", 2);
+    ui->pushButton->setCheckable(true);
 
     // 获取所有样式
     QMap<QString, QString> mapSkin = QssHelper::instance()->getAllQssName();
