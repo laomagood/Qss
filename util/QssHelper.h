@@ -15,7 +15,7 @@ public:
     void setSkinStyle(const QString &t_name);           // 设置皮肤
 
 signals:
-    void skinChanged(QString);                          // 皮肤更新信号（主题名称）
+    void skinChanged(QPair<QString, QString>);          // 皮肤更新信号<主题名称， 颜色>
 
 private:
     QssHelper() = default;

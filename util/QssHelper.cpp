@@ -44,7 +44,11 @@ void QssHelper::setSkinStyle(const QString &t_name)
 {
     getIniFileColor(t_name);
     replaceColorQssFile();
-    emit skinChanged(t_name);
+
+    QMap<QString, QString> map = getAllQssName();
+    QString strColor = map.value(t_name);
+    QPair<QString, QString> pair(t_name, strColor);
+    emit skinChanged(pair);
 }
 
 void QssHelper::getIniFileColor(QString t_nama)
