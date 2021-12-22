@@ -82,6 +82,18 @@ border:1px solid BORDERCOLOR;
 border-radius:3px;
 }
 
+QFrame[frameShape="4"]{
+border:none;
+background-color:BORDERCOLOR;
+max-height:1px;
+}
+
+QFrame[frameShape="5"]{
+border:none;
+background-color:BORDERCOLOR;
+max-width:1px;
+}
+
 QLineEdit,QTextEdit,QPlainTextEdit,QSpinBox,QDoubleSpinBox,QComboBox,QDateEdit,QTimeEdit,QDateTimeEdit{
 border:1px solid BORDERCOLOR;
 border-radius:3px;
